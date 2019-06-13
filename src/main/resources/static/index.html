@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialogue Demo</title>
+    <link rel="stylesheet" href="dist/bootstrap3.3.7/bootstrap.min.css">
+    <script src="dist/jquery2.1.1.min.js"></script>
+    <script src="dist/bootstrap3.3.7/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1> Dialogue Demo
+            <small>这是子标题</small>
+        </h1>
+    </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="q">
+                    <span class="input-group-btn">
+						<button class="btn btn-danger" type="button" id="btn">
+							Go!
+						</button>
+					</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 3%">
+            <div class="panel panel-default" style="width: 50%">
+                <div class="panel-body" id="text">
+
+                </div>
+            </div>
+        </div>
+</div>
+
+<script>
+    $(function () {
+        $(document).keydown(function (event) {
+            if (event.keyCode === 13) {
+                $("#btn").click();
+            }
+        });
+
+
+        $("#btn").click(function () {
+            $('#text').html(new Date().toLocaleString() + '<span style="color: red"> 提问者: </span>' + $("#q").val() + "<br\>" + $("#text").html())
+            $.ajax({
+                type: "GET",
+                url: "/qa-by-cosine",
+                data: {q: $("#q").val()},
+                success: function (data) {
+                    console.log(data)
+                    $("#q").val("")
+                    $('#text').html(new Date().toLocaleString() + '<span style="color: green"> 智能机器人: </span>' + data + "<br\>" + $("#text").html());
+                }
+            });
+        })
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+logging:
+  level:
+    root: info
+    com.xjtu.dlc.autoqa.qa: debug
+    com.xjtu.dlc.autoqa.weixin: info
+
+wechat:
+  mp:
+    appId: wxa8afcc580e0b9764
+    secret: 6e2f2a9feaa0f50639792cfa9f7db6a8
+    token: 随意
+    aesKey: any_aesKey
+
+server:
+  port: 8041
+

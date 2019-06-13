@@ -1,0 +1,34 @@
+{
+  "button": [
+    {
+      "type": "click",
+      "name": "知识森林",
+      "key": "V1001_KF"
+    },
+    {
+      "type": "view",
+      "name": "实验室介绍",
+      "url": "http://labs.xjtudlc.com/labs/index.html"
+    },
+    {
+      "name": "我们",
+      "sub_button": [
+        {
+          "type": "view",
+          "name": "学术带头人",
+          "url": "http://yotta.xjtushilei.com:888/Yotta_frontend/team.html#fh5co-why-us"
+        },
+        {
+          "type": "view",
+          "name": "团队",
+          "url": "http://yotta.xjtushilei.com:888/Yotta_frontend/team.html#team"
+        },
+        {
+          "type": "click",
+          "name": "赞一下我们",
+          "key": "V1001_GOOD"
+        }
+      ]
+    }
+  ]
+}
